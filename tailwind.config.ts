@@ -64,7 +64,7 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ['"Noto Sans KR"', 'sans-serif'],
+        sans: ['Outfit', '"Noto Sans KR"', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {
@@ -75,20 +75,10 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "marquee": {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
-        },
-        "fade-up": {
-          from: { opacity: "0", transform: "translateY(40px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "marquee": "marquee 20s linear infinite",
-        "fade-up": "fade-up 0.8s ease-out forwards",
       },
     },
   },

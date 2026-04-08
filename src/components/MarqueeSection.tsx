@@ -1,17 +1,29 @@
+const clients = [
+  "LG U+", "HYBE", "SAMSUNG", "CHEIL", "SK TELECOM",
+  "NAVER", "CJ", "HYUNDAI", "LOTTE", "KT",
+  "DOOSAN", "SHINSEGAE",
+];
+
 const MarqueeSection = () => {
-  const text = "DESIGN SOLUTION ✦ VMD ✦ POSM ✦ POP & DISPLAY ✦ FIXTURE ✦ ";
-  
+  const text = clients.join(" · ") + " · ";
+
   return (
-    <section className="overflow-hidden border-y border-border py-8">
+    <section className="overflow-hidden border-y border-border py-6">
       <div className="animate-marquee flex whitespace-nowrap">
-        {[0, 1].map((i) => (
-          <span
-            key={i}
-            className="text-display text-foreground/10 mx-4"
-          >
-            {text}{text}
-          </span>
-        ))}
+        <span className="text-sm tracking-[0.15em] text-foreground/20 mx-2">
+          {text}{text}{text}
+        </span>
+        <span className="text-sm tracking-[0.15em] text-foreground/20 mx-2">
+          {text}{text}{text}
+        </span>
+      </div>
+      <div className="animate-marquee-reverse mt-4 flex whitespace-nowrap">
+        <span className="text-sm tracking-[0.15em] text-foreground/20 mx-2">
+          {text}{text}{text}
+        </span>
+        <span className="text-sm tracking-[0.15em] text-foreground/20 mx-2">
+          {text}{text}{text}
+        </span>
       </div>
     </section>
   );
