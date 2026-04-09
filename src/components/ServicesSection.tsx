@@ -21,8 +21,7 @@ const ServicesSection = () => {
 
         <div className="max-w-3xl">
           <p className="text-lg font-light leading-loose text-foreground/80 md:text-xl">
-            풍부한 경험과 이해로 웹 표준을 준수하여
-            누구나 이용할 수 있는 디자인 솔루션을 제공합니다.
+            풍부한 경험과 이해로 누구나 이용할 수 있는 디자인 솔루션을 제공합니다.
           </p>
           <p className="mt-6 text-lg font-light leading-loose text-foreground/80 md:text-xl">
             다양한 구축 사례와 미래를 위한 노력을 통해

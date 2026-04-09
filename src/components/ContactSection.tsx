@@ -1,79 +1,36 @@
-const ContactSection = () => {
-  return (
-    <section id="contact" className="border-t border-border">
-      {/* CTA */}
-      <div className="flex flex-col items-center justify-center px-8 py-32 text-center md:py-40">
-        <a
-          href="mailto:info@posi.co.kr"
-          className="group inline-block"
-        >
-          <span className="text-heading text-foreground transition-colors group-hover:text-accent">
-            CONTACT US
-          </span>
-        </a>
-        <p className="mt-6 text-sm font-light tracking-[0.2em] text-muted-foreground">
-          WORK TOGETHER
-        </p>
+const ContactSection = () => (
+    <section id="contact" className="relative min-h-screen flex flex-col justify-between py-24 px-8 md:px-16 lg:px-24 border-t border-white/10">
+      <div>
+        <p className="text-xs tracking-[0.3em] text-foreground/40 uppercase">05 — Contact</p>
       </div>
-
-      {/* Footer */}
-      <footer className="border-t border-border px-8 py-12 md:px-16">
-        <div className="grid gap-12 md:grid-cols-3">
-          {/* Menu */}
-          <div>
-            <p className="mb-4 text-xs tracking-[0.2em] text-muted-foreground">
-              MENU
-            </p>
-            <div className="flex flex-col gap-3">
-              {["WORK", "ABOUT", "SERVICES", "CONTACT"].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="text-sm font-light text-foreground/60 transition-colors hover:text-foreground"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Contacts */}
-          <div>
-            <p className="mb-4 text-xs tracking-[0.2em] text-muted-foreground">
-              CONTACTS
-            </p>
-            <div className="flex flex-col gap-3">
-              <a
-                href="mailto:info@posi.co.kr"
-                className="text-sm font-light text-foreground/60 transition-colors hover:text-foreground"
-              >
-                INFO@POSI.CO.KR
-              </a>
-              <p className="text-sm font-light text-foreground/60">
-                서울특별시 성동구 성수동
-              </p>
-            </div>
-          </div>
-
-          {/* Brand */}
-          <div className="flex flex-col justify-between">
-            <p className="text-sm font-light text-foreground/40">
-              SINCE 1972
-            </p>
-            <p className="mt-4 text-xs text-foreground/30">
-              © 2024 POSI Design Solution Group.
-            </p>
-          </div>
+      <div className="flex-1 flex items-center py-16">
+        <div>
+          <h2 className="text-display text-foreground leading-none mb-12">
+            Let's<br />
+            <span className="text-foreground/30">work</span><br />
+            together.
+          </h2>
+          <a href="mailto:hello@renee.kr" className="inline-flex items-center gap-4 group">
+            <span className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300 text-lg">
+              →
+            </span>
+            <span className="text-subheading text-foreground/60 group-hover:text-foreground transition-colors duration-300 tracking-[0.2em]">
+              hello@renee.kr
+            </span>
+          </a>
         </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-xs tracking-[0.3em] text-foreground/20">
-            POSI DESIGN.
-          </p>
+      </div>
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+        <div className="flex gap-6">
+          {["Instagram", "Behance", "LinkedIn"].map((sns) => (
+            <a key={sns} href="#" className="text-xs text-foreground/50 hover:text-foreground transition-colors tracking-widest uppercase">
+              {sns}
+            </a>
+          ))}
         </div>
-      </footer>
+        <p className="text-xs text-foreground/20 tracking-widest">© 2025 RENEE. ALL RIGHTS RESERVED.</p>
+      </div>
     </section>
   );
-};
-
-export default ContactSection;
+  
+  export default ContactSection;

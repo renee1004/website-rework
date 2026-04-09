@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const works = [
   {
@@ -32,35 +32,91 @@ const works = [
 ];
 
 const WorksCarousel = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % works.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section id="work" className="relative min-h-screen bg-background">
-      {/* Current slide */}
-      <div className="relative h-screen overflow-hidden">
+    <section id="work">
+
+      <style>{`
+        .stack-container {
+          position: relative;
+        }
+
+        .stack-item {
+          position: sticky;
+          top: 0;
+          height: 100vh;
+          overflow: hidden;
+        }
+
+        /* 각 카드마다 쌓이는 느낌을 위한 top offset */
+        .stack-item:nth-child(1) { top: 0px;  z-index: 1; }
+        .stack-item:nth-child(2) { top: 0px;  z-index: 2; }
+        .stack-item:nth-child(3) { top: 0px;  z-index: 3; }
+        .stack-item:nth-child(4) { top: 0px;  z-index: 4; }
+
+        .stack-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transform: scale(1.0);
+          transition: transform 0.6s ease;
+        }
+
+        /* 스크롤 연동 애니메이션 */
+        @keyframes scaleDown {
+          from { transform: scale(1.0); }
+          to   { transform: scale(0.95); }
+        }
+
+        .stack-item.is-stacked .stack-img {
+          animation: scaleDown 0.5s ease forwards;
+        }
+
+        /* 텍스트 슬라이드업 */
+        @keyframes textUp {
+          from { transform: translateY(20px); opacity: 0; }
+          to   { transform: translateY(0px);  opacity: 1; }
+        }
+
+        .stack-text {
+          animation: textUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.2s both;
+        }
+
+        /* 카드 진입 — 아래에서 위로 */
+        @keyframes cardEnter {
+          from { transform: translateY(60px); opacity: 0.6; }
+          to   { transform: translateY(0px);  opacity: 1; }
+        }
+
+        .stack-item {
+          animation: cardEnter 0.8s cubic-bezier(0.16,1,0.3,1) both;
+          animation-timeline: view();
+          animation-range: entry 0% entry 40%;
+        }
+      `}</style>
+
+      <div className="stack-container">
         {works.map((work, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === activeIndex ? "opacity-100" : "opacity-0 pointer-events-none"
-            }`}
-          >
+          <div key={index} className="stack-item">
+
+            {/* 배경 이미지 */}
             <img
               src={work.image}
               alt={work.title}
-              className="h-full w-full object-cover"
+              className="stack-img absolute inset-0 h-full w-full object-cover"
             />
+
+            {/* 오버레이 */}
             <div className="absolute inset-0 bg-background/50" />
 
-            {/* Slide info overlay */}
-            <div className="absolute bottom-16 left-8 md:left-16">
+            {/* 카드 번호 */}
+            <div className="absolute top-8 right-8 md:right-16">
+              <p className="text-xs tracking-[0.3em] text-foreground/30">
+                {String(index + 1).padStart(2, "0")} / {String(works.length).padStart(2, "0")}
+              </p>
+            </div>
+
+            {/* 텍스트 정보 */}
+            <div className="stack-text absolute bottom-16 left-8 md:left-16">
               <p className="text-xs tracking-[0.2em] text-foreground/50 mb-2">
                 {work.client}
               </p>
@@ -72,29 +128,16 @@ const WorksCarousel = () => {
               </p>
             </div>
 
-            <div className="absolute bottom-16 right-8 md:right-16">
+            <div className="stack-text absolute bottom-16 right-8 md:right-16">
               <p className="text-xs tracking-[0.2em] text-foreground/40">
                 ⓒ{work.year}
               </p>
             </div>
+
           </div>
         ))}
-
-        {/* Slide indicators */}
-        <div className="absolute bottom-16 left-1/2 flex -translate-x-1/2 gap-2">
-          {works.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveIndex(index)}
-              className={`h-1 transition-all duration-500 ${
-                index === activeIndex
-                  ? "w-8 bg-foreground"
-                  : "w-4 bg-foreground/30"
-              }`}
-            />
-          ))}
-        </div>
       </div>
+
     </section>
   );
 };

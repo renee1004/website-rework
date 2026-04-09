@@ -1,7 +1,7 @@
 const clients = [
   "LG U+", "HYBE", "SAMSUNG", "CHEIL", "SK TELECOM",
-  "NAVER", "CJ", "HYUNDAI", "LOTTE", "KT",
-  "DOOSAN", "SHINSEGAE",
+  "LOTTECARD", "KT&G", "LG", "P&G", "Elizabeth Arden",
+  "HHG GLOBAL", "SHINSEGAE", "PHILIPS"
 ];
 
 const MarqueeSection = () => {

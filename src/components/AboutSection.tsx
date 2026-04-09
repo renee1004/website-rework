@@ -8,15 +8,15 @@ const AboutSection = () => {
       <div className="grid gap-16 md:grid-cols-2">
         <div>
           <h2 className="text-heading leading-snug text-foreground">
-            WE ARCHITECT THE RETAIL EXPERIENCE.
+            DESIGN THE PATH, DRIVE THE SALES.
           </h2>
         </div>
         <div className="flex flex-col justify-center">
-          <p className="text-xl font-light leading-loose text-muted-foreground md:text-3xl">
-            작은 것 하나도 놓치지 않고 확실한 결과물을 만들기 위해
-            항상 고민하고 소통합니다.
-          </p>
-          <p className="mt-6 text-xl font-light leading-loose text-muted-foreground md:text-lg">
+          <p className="text-xl font-light leading-loose text-muted-foreground md:text-xl">
+            포시는 공간을 채우는 디자인을 넘어, 브랜드의 성장을 완성하는
+            세일즈 경로를 설계합니다.
+        </p>
+          <p className="mt-2 text-xl font-light leading-loose text-muted-foreground md:text-xl">
             "소통"을 기본으로 혁신적인 기술과 창의력을 더해
             고객의 만족을 감동으로 전하겠습니다.
           </p>
