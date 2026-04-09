@@ -46,15 +46,17 @@ const HeroSection = () => {
           </p>
         </div>
 
-        {/* Main display text */}
-        <h1 className="animate-fade-up text-display text-foreground">
-          WE ARCHITECT<br />
-          THE RETAIL<br />
-          EXPERIENCE.
-        </h1>
+        {/* Main display text - aligned with SOLUTIONS bottom */}
+        <div className="absolute bottom-36 left-8 md:left-16">
+          <h1 className="animate-fade-up text-display text-foreground">
+            WE ARCHITECT<br />
+            THE RETAIL<br />
+            EXPERIENCE.
+          </h1>
+        </div>
 
         {/* Scroll indicator */}
-        <div className="animate-fade-in animation-delay-800 mt-12 flex justify-center">
+        <div className="animate-fade-in animation-delay-800 absolute bottom-16 left-1/2 -translate-x-1/2">
           <p className="text-xs tracking-[0.3em] text-foreground/40">Down</p>
         </div>
       </div>
