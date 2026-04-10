@@ -45,18 +45,19 @@ const StarField = () => {
 
     const spawnShootingStar = () => {
       shootingStars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height * 0.5,
-        len: Math.random() * 120 + 80,
-        speed: Math.random() * 12 + 8,
-        angle: Math.PI / 4 + (Math.random() - 0.5) * 0.4,
+        x: Math.random() * canvas.width * 0.8,
+        y: Math.random() * canvas.height * 0.3,
+        len: Math.random() * 180 + 100,
+        speed: Math.random() * 16 + 10,
+        angle: Math.PI / 4 + (Math.random() - 0.5) * 0.3,
         opacity: 1,
         life: 0,
-        maxLife: Math.random() * 40 + 30,
+        maxLife: Math.random() * 50 + 40,
       });
     };
 
-    let lastShootingTime = 0;
+    let lastShootingTime = -5000; // spawn one early
+    let nextInterval = 2000;
 
     const draw = (time: number) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -83,9 +84,10 @@ const StarField = () => {
       }
 
       // Shooting stars
-      if (time - lastShootingTime > 3000 + Math.random() * 4000) {
+      if (time - lastShootingTime > nextInterval) {
         spawnShootingStar();
         lastShootingTime = time;
+        nextInterval = 2000 + Math.random() * 3000;
       }
 
       for (let i = shootingStars.length - 1; i >= 0; i--) {
@@ -111,7 +113,18 @@ const StarField = () => {
         ctx.moveTo(ss.x, ss.y);
         ctx.lineTo(tailX, tailY);
         ctx.strokeStyle = grad;
-        ctx.lineWidth = 1.5;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Wider glow trail
+        const grad2 = ctx.createLinearGradient(ss.x, ss.y, tailX, tailY);
+        grad2.addColorStop(0, `rgba(200, 220, 255, ${ss.opacity * 0.4})`);
+        grad2.addColorStop(1, "rgba(200, 220, 255, 0)");
+        ctx.beginPath();
+        ctx.moveTo(ss.x, ss.y);
+        ctx.lineTo(tailX, tailY);
+        ctx.strokeStyle = grad2;
+        ctx.lineWidth = 5;
         ctx.stroke();
 
         // Head glow
@@ -143,7 +156,7 @@ const StarField = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-0"
+      className="pointer-events-none fixed inset-0 z-[5]"
       style={{ mixBlendMode: "screen" }}
     />
   );
