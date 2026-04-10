@@ -29,7 +29,7 @@ const StarField = () => {
     const init = () => {
       resize();
       stars.length = 0;
-      const count = Math.floor((canvas.width * canvas.height) / 4000);
+      const count = Math.floor((canvas.width * canvas.height) / 8000);
       for (let i = 0; i < count; i++) {
         const isBright = Math.random() < 0.08;
         stars.push({
