@@ -129,13 +129,13 @@ const HeroSection = () => {
       <div className="relative z-10 flex h-[calc(100%-100px)] flex-col justify-end px-8 pb-16 md:px-16">
         <div className="absolute bottom-40 right-8 text-right md:right-16">
           <p className="animate-fade-in animation-delay-600 text-xs font-light tracking-[0.2em] text-foreground/70">
-            WE DESIGN
+            WE CRAFT
           </p>
           <p className="animate-fade-in animation-delay-800 text-xs font-light tracking-[0.2em] text-foreground/70">
-            EVERYTHING
+            GROWTH
           </p>
-          <p className="animate-fade-in animation-delay-800 text-xs font-light tracking-[0.2em] text-accent">
-            SOLUTIONS
+          <p className="animate-fade-in animation-delay-800 text-xs font-light tracking-[0.2em] text-orange-600">
+            PATHWAYS
           </p>
         </div>
 
