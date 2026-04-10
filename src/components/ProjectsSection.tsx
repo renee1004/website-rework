@@ -34,9 +34,9 @@ const ProjectsSection = () => {
     <section className="px-8 py-32 md:px-16 lg:px-24">
       <div className="mb-16 flex items-end justify-between">
         <div>
-          <p className="text-subheading text-accent mb-4">Design is never done</p>
+          <p className="text-subheading mb-4 text-orange-600">Design is never done</p>
           <h2 className="text-heading text-foreground">
-            <span className="text-accent">1000+</span> OUR WORK
+            <span className="text-orange-600">1000+</span> OUR WORK
           </h2>
         </div>
       </div>

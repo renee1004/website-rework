@@ -17,7 +17,7 @@ const ServicesSection = () => {
       </div>
 
       <div className="relative z-10 px-8 py-32 md:px-16 lg:px-24">
-        <p className="text-subheading text-accent mb-6">for Everyone</p>
+        <p className="text-subheading mb-6 text-orange-600">for Everyone</p>
 
         <div className="max-w-3xl">
           <p className="text-lg font-light leading-loose text-foreground/80 md:text-xl">
@@ -58,7 +58,7 @@ const ServicesSection = () => {
               key={service.num}
               className="group bg-background/80 p-10 backdrop-blur-sm transition-colors hover:bg-secondary/50"
             >
-              <span className="text-xs tracking-[0.2em] text-accent">
+              <span className="text-xs tracking-[0.2em] text-orange-600">
                 {service.num}
               </span>
               <h3 className="mt-4 text-xl font-light tracking-wide text-foreground">

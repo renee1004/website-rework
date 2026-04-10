@@ -79,7 +79,7 @@ const ContactSection = () => {
                 />
                 <button
                   type="submit"
-                  className="w-full border border-orange-500/70 py-4 text-xs tracking-[0.3em] text-foreground hover:bg-orange-500/10 transition-all duration-300 flex items-center justify-center gap-6 mt-1"
+                  className="w-full border py-4 text-xs tracking-[0.3em] text-foreground transition-all duration-300 flex items-center justify-center gap-6 mt-1 bg-secondary border-orange-600"
                 >
                   SEND MESSAGE
                   <span className="w-8 h-px bg-foreground/40 inline-block"></span>
