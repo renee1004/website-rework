@@ -20,12 +20,12 @@ const ServicesSection = () => {
         <p className="text-subheading text-accent mb-6">for Everyone</p>
 
         <div className="max-w-3xl">
-          <p className="text-lg font-light leading-loose tracking-tight text-foreground/80 md:text-xl">
-            풍부한 경험과 이해로 누구나 이용할 수 있는 디자인 솔루션을 제공합니다.
+          <p className="text-lg font-light leading-loose text-foreground/80 md:text-xl">
+            From Insight to Impact.
           </p>
-          <p className="mt-2 text-lg font-light leading-loose tracking-tight text-foreground/80 md:text-xl">
-            다양한 구축 사례와 미래를 위한 노력을 통해
-            최신 기술의 안정적인 서비스를 제공합니다.
+          <p className="mt-2 text-lg font-light leading-loose text-foreground/80 md:text-xl">
+            풍부한 경험과 개발로 브랜드 가치를
+            현실로 구현하는 디자인 솔루션을 제공합니다.
           </p>
           <p className="mt-8 text-sm font-light italic text-foreground/30">
             With our extensive experience and understanding, we provide

@@ -10,18 +10,18 @@ const MarqueeSection = () => {
   return (
     <section className="overflow-hidden border-y border-border py-6">
       <div className="animate-marquee flex whitespace-nowrap">
-        <span className="text-sm tracking-[0.15em] text-foreground/20 mx-2">
+        <span className="text-xl font-bold tracking-[0.1em] text-foreground/30 mx-2">
           {text}{text}{text}
         </span>
-        <span className="text-sm tracking-[0.15em] text-foreground/20 mx-2">
+        <span className="text-xl font-bold tracking-[0.1em] text-foreground/30 mx-2">
           {text}{text}{text}
         </span>
       </div>
       <div className="animate-marquee-reverse mt-4 flex whitespace-nowrap">
-        <span className="text-sm tracking-[0.15em] text-foreground/20 mx-2">
+        <span className="text-xl font-bold tracking-[0.1em] text-foreground/30 mx-2">
           {text}{text}{text}
         </span>
-        <span className="text-sm tracking-[0.15em] text-foreground/20 mx-2">
+        <span className="text-xl font-bold tracking-[0.1em] text-foreground/30 mx-2">
           {text}{text}{text}
         </span>
       </div>

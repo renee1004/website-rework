@@ -14,33 +14,50 @@ const ContactSection = () => {
   return (
     <section id="contact" className="relative min-h-screen flex flex-col justify-between py-24 px-8 md:px-16 lg:px-24 border-t border-white/10">
       <div>
-        <p className="text-xs tracking-[0.3em] text-foreground/40 uppercase">05 — Contact</p>
+        <p className="text-xs tracking-[0.3em] text-foreground/40 uppercase"></p>
       </div>
 
       <div className="flex-1 flex items-center py-16">
         <div className="grid md:grid-cols-2 gap-16 w-full">
 
-          {/* 왼쪽 */}
           <div className="flex flex-col justify-center">
             <h2 className="text-4xl md:text-5xl font-light text-foreground leading-none mb-8">
               {"Let's"}<br />
               <span className="text-foreground/30">work</span><br />
               together.
             </h2>
-            <p className="text-xs text-foreground/40 tracking-widest mt-6">posi@posi.co.kr</p>
+            {/* ✅ 추가: 화살표 + 이메일 */}
+            <div className="flex items-center gap-4 mb-4">
+              <a
+                href="mailto:posi@posi.co.kr"
+                className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 text-sm flex-shrink-0"
+              >
+                →
+              </a>
+              <a
+                href="mailto:posi@posi.co.kr"
+                className="text-xs tracking-[0.2em] text-foreground/60 hover:text-foreground transition-colors duration-300"
+              >
+                posi@posi.co.kr
+              </a>
+            </div>
+            
+            <div className="flex flex-col gap-1 mt-1 text-xs text-foreground/40 tracking-widest">
+              <p>(04797) 서울시 성동구 아차산로 11길 10</p>
+              <p>T. 02-464-4500&nbsp;&nbsp;F. 02-463-4603</p>
+            </div>
           </div>
 
-          {/* 오른쪽 — 폼 */}
           <div className="flex flex-col justify-center">
             {sent ? (
               <p className="text-sm tracking-[0.2em] text-foreground/60 py-8">문의가 접수되었습니다. 감사합니다.</p>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-0">
                 {[
-                  { key: "name", label: "NAME", type: "text", placeholder: "" },
-                  { key: "tel", label: "TEL", type: "tel", placeholder: "" },
-                  { key: "email", label: "E-MAIL", type: "email", placeholder: "" },
-                  { key: "subject", label: "SUBJECT", type: "text", placeholder: "" },
+                  { key: "name", label: "NAME", type: "text" },
+                  { key: "tel", label: "TEL", type: "tel" },
+                  { key: "email", label: "E-MAIL", type: "email" },
+                  { key: "subject", label: "SUBJECT", type: "text" },
                 ].map(({ key, label, type }) => (
                   <input
                     key={key}
@@ -79,7 +96,7 @@ const ContactSection = () => {
           <a href="https://www.instagram.com/posiinc/" target="_blank" rel="noopener noreferrer" className="text-xs text-foreground/50 hover:text-foreground transition-colors tracking-widest uppercase">Instagram</a>
           <a href="https://www.facebook.com/profile.php?id=100063991992599" target="_blank" rel="noopener noreferrer" className="text-xs text-foreground/50 hover:text-foreground transition-colors tracking-widest uppercase">Facebook</a>
         </div>
-        <p className="text-xs text-foreground/20 tracking-widest">© 2025 RENEE. ALL RIGHTS RESERVED.</p>
+        <p className="text-xs text-foreground/20 tracking-widest">© 2025 POSIINCORPORATION. ALL RIGHTS RESERVED.</p>
       </div>
     </section>
   );
