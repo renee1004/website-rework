@@ -2,7 +2,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="px-8 py-32 md:px-16 lg:px-24">
       <div className="mb-12">
-        <p className="text-subheading text-accent mb-6">What we do</p>
+        <p className="text-subheading mb-6 text-orange-600">What we do</p>
       </div>
 
       <div className="grid gap-16 md:grid-cols-2">
